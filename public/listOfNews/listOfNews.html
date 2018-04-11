@@ -1,0 +1,66 @@
+<div class="categories">
+    <ul class="list-inline">
+        <li class="list-inline-item" ng-click="vm.newsOfCategory('business', 'Бизнес')">Бизнес</li>
+        <li class="list-inline-item" ng-click="vm.newsOfCategory('entertainment', 'Развлечения')">Развлечения</li>
+        <li class="list-inline-item" ng-click="vm.newsOfCategory('general', 'Главное')">Главное</li>
+        <li class="list-inline-item" ng-click="vm.newsOfCategory('health', 'Здоровье')">Здоровье</li>
+        <li class="list-inline-item" ng-click="vm.newsOfCategory('science', 'Наука')">Наука</li>
+        <li class="list-inline-item" ng-click="vm.newsOfCategory('sports', 'Спорт')">Спорт</li>
+        <li class="list-inline-item" ng-click="vm.newsOfCategory('technology', 'Технологии')">Технологии</li>
+    </ul>
+</div>
+<div class="row">
+    <div class="col-sm-3 col-md-2 col-lg-2 col-xl-2 container">
+        <div class="row settings">
+            <h5>Страны:</h5>
+            <p><input type="text" ng-model="countryFilter"></p>
+            <div class="col-12 selectCountries container">
+                <div class="country" ng-repeat="country in vm.listOfCountries | filter:{name:countryFilter}"
+                     ng-click="vm.newsOfCountry(country.id, country.name)">
+                    <a><img src={{country.image}} class="imgCountry"> {{country.name}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="row settings">
+            <h5>Издания:</h5>
+            <p><input type="text" ng-model="sourceFilter"></p>
+            <div class="col-12 selectCountries container">
+                <div class="country" ng-repeat="source in vm.listOfSources.sources | filter:{name:sourceFilter}"
+                     ng-click="vm.newsOfSources(source.id, source.name)">
+                    <a>{{source.name}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="row settings">
+            <h5>Язык статьи:</h5>
+            <p><input type="text" ng-model="languageFilter"></p>
+            <div class="col-12 selectCountries container">
+                <div class="country" ng-repeat="language in vm.languages | filter:{name:languageFilter}"
+                     ng-click="vm.newsOfLanguage(language.id, language.name)">
+                    <a>{{language.name}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9 col-md-10 col-lg-10 col-xl-10 container">
+        <div class="row">
+            <div class="col">
+                Параметры: {{vm.options.country}} {{vm.options.source}} {{vm.options.category}} {{vm.options.language}}
+            </div>
+        </div>
+        <div class="row neswList">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" ng-repeat="news in vm.listOfNews.articles">
+                <div class="card">
+                    <img class="card-img-top" src={{news.urlToImage}} alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{news.title}}</h5>
+                        <p class="card-text">{{news.description}}</p>
+                        <button type="button" class="btn btn-primary" ng-click="vm.showDetailedNews(news)">Открыть</button>
+                        <button type="button" class="btn btn-primary" ng-click="vm.saveNews(news)"><i class="fas fa-save"></i></button>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

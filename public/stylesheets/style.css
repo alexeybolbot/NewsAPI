@@ -1,0 +1,88 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  min-width: 700px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.row {
+  margin: 0;
+}
+
+.col {
+  margin-top: 15px;
+}
+
+.container {
+  padding: 0;
+}
+
+.neswList {
+  padding: 15px;
+}
+
+.settings{
+  margin-top: 15px;
+  padding-left: 15px;
+}
+
+.selectCountries {
+  overflow: auto;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  max-height: 200px;
+}
+
+.country:hover{
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.list-inline-item:hover{
+  cursor: pointer;
+}
+
+.country {
+  margin-bottom: 3px;
+}
+
+.imgCountry {
+  height: 30px;
+  width: 30px;
+}
+
+.categories {
+  height: 30px;
+  line-height: 30px;
+  padding-left: 15px;
+  background-color: #00b9ff;
+}
+
+.imgNews{
+  max-height: 200px;
+  max-width: 300px;
+}
+
+.text{
+  width: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  min-height: 300px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
